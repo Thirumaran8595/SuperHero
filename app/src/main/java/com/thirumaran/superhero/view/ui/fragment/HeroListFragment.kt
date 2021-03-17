@@ -23,7 +23,7 @@ class HeroListFragment : Fragment(),
     private var heroListViewModel: HeroListViewModel? = null
     private lateinit var fragmentHeroListBinding: FragmentHeroListBinding
     private var superHeroAdapter: SuperHeroAdapter = SuperHeroAdapter()
-
+    var bottomSheetDialog: BottomSheetDialog? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,6 +44,7 @@ class HeroListFragment : Fragment(),
         fragmentHeroListBinding.viewmodel = heroListViewModel
 
 
+        //Search text watcher
         fragmentHeroListBinding.edtSrch.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
@@ -101,6 +102,8 @@ class HeroListFragment : Fragment(),
         return fragmentHeroListBinding.root
     }
 
+
+    //Recycler Update
     private fun updateAdapter(response: List<ResultsItem>) {
         superHeroAdapter.run {
             results.clear()
@@ -110,11 +113,14 @@ class HeroListFragment : Fragment(),
 
     }
 
+    //Filter Bottom Sheet
     private fun showBottomsheet() {
         val view = layoutInflater.inflate(R.layout.filter_bottomsheet, null)
-        val bottomSheetDialog = BottomSheetDialog(fragmentHeroListBinding.txtFilter.context)
-        bottomSheetDialog.setContentView(view)
-        bottomSheetDialog.setCancelable(true)
+
+        bottomSheetDialog?.dismiss()
+        bottomSheetDialog = BottomSheetDialog(fragmentHeroListBinding.txtFilter.context)
+        bottomSheetDialog?.setContentView(view)
+        bottomSheetDialog?.setCancelable(true)
 
         val intelligence = view.findViewById<SeekBar>(R.id.seekbar_inteli)
         val strength = view.findViewById<SeekBar>(R.id.seekbar_strength)
@@ -130,7 +136,7 @@ class HeroListFragment : Fragment(),
         power.setOnSeekBarChangeListener(this)
         combat.setOnSeekBarChangeListener(this)
 
-        bottomSheetDialog.show()
+        bottomSheetDialog?.show()
 
 
     }
@@ -141,14 +147,14 @@ class HeroListFragment : Fragment(),
             R.id.seekbar_inteli -> {
                 val result = heroListViewModel?.herodetail?.value?.filter { intelligence ->
                     if (seekBar.progress != 0) intelligence.powerstats?.intelligence != "null" && intelligence.powerstats?.intelligence?.toInt()!! >= seekBar.progress
-                    else intelligence.powerstats?.intelligence == "null"
+                    else intelligence.powerstats?.intelligence != null
                 }
                 heroListViewModel?.filterdetail?.postValue(result)
             }
             R.id.seekbar_strength -> {
                 val result = heroListViewModel?.herodetail?.value?.filter { strength ->
                     if (seekBar.progress != 0) strength.powerstats?.strength != "null" && strength.powerstats?.strength?.toInt()!! >= seekBar.progress
-                    else strength.powerstats?.strength == "null"
+                    else strength.powerstats?.strength != null
                 }
                 heroListViewModel?.filterdetail?.postValue(result)
             }
@@ -156,7 +162,7 @@ class HeroListFragment : Fragment(),
             R.id.seekbar_speed -> {
                 val result = heroListViewModel?.herodetail?.value?.filter { speed ->
                     if (seekBar.progress != 0) speed.powerstats?.speed != "null" && speed.powerstats?.speed?.toInt()!! >= seekBar.progress
-                    else speed.powerstats?.speed == "null"
+                    else speed.powerstats?.speed != null
                 }
                 heroListViewModel?.filterdetail?.postValue(result)
 
@@ -164,21 +170,21 @@ class HeroListFragment : Fragment(),
             R.id.seekbar_durability -> {
                 val result = heroListViewModel?.herodetail?.value?.filter { durability ->
                     if (seekBar.progress != 0) durability.powerstats?.durability != "null" && durability.powerstats?.durability?.toInt()!! >= seekBar.progress
-                    else durability.powerstats?.durability == "null"
+                    else durability.powerstats?.durability != null
                 }
                 heroListViewModel?.filterdetail?.postValue(result)
             }
             R.id.seekbar_power -> {
                 val result = heroListViewModel?.herodetail?.value?.filter { power ->
                     if (seekBar.progress != 0) power.powerstats?.power != "null" && power.powerstats?.power?.toInt()!! >= seekBar.progress
-                    else power.powerstats?.power == "null"
+                    else power.powerstats?.power != null
                 }
                 heroListViewModel?.filterdetail?.postValue(result)
             }
             R.id.seekbar_combat -> {
                 val result = heroListViewModel?.herodetail?.value?.filter { combat ->
                     if (seekBar.progress != 0) combat.powerstats?.combat != "null" && combat.powerstats?.combat?.toInt()!! >= seekBar.progress
-                    else combat.powerstats?.combat == "null"
+                    else combat.powerstats?.combat != null
                 }
                 heroListViewModel?.filterdetail?.postValue(result)
             }

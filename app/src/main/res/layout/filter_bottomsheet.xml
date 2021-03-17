@@ -56,12 +56,12 @@
                 android:id="@+id/seekbar_inteli"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:max="100"
-                android:layout_marginTop="10dp"
                 android:layout_margin="20dp"
+                android:layout_marginTop="10dp"
+                android:max="100"
                 app:layout_constraintRight_toRightOf="@+id/right_guidelines"
                 app:layout_constraintTop_toTopOf="parent"
-                />
+                tools:text="100" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txt_strength"
@@ -78,13 +78,11 @@
                 android:id="@+id/seekbar_strength"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:max="100"
-                android:layout_marginTop="10dp"
                 android:layout_margin="20dp"
+                android:layout_marginTop="10dp"
+                android:max="100"
                 app:layout_constraintRight_toRightOf="@+id/right_guidelines"
-                app:layout_constraintTop_toBottomOf="@+id/seekbar_inteli"
-                />
-
+                app:layout_constraintTop_toBottomOf="@+id/seekbar_inteli" />
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -102,12 +100,11 @@
                 android:id="@+id/seekbar_speed"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:max="100"
-                android:layout_marginTop="10dp"
                 android:layout_margin="20dp"
+                android:layout_marginTop="10dp"
+                android:max="100"
                 app:layout_constraintRight_toRightOf="@+id/right_guidelines"
-                app:layout_constraintTop_toBottomOf="@+id/seekbar_strength"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/seekbar_strength" />
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -125,12 +122,11 @@
                 android:id="@+id/seekbar_durability"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:max="100"
-                android:layout_marginTop="10dp"
                 android:layout_margin="20dp"
+                android:layout_marginTop="10dp"
+                android:max="100"
                 app:layout_constraintRight_toRightOf="@+id/right_guidelines"
-                app:layout_constraintTop_toBottomOf="@+id/seekbar_speed"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/seekbar_speed" />
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -149,13 +145,11 @@
                 android:id="@+id/seekbar_power"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:max="100"
-                android:layout_marginTop="10dp"
                 android:layout_margin="20dp"
+                android:layout_marginTop="10dp"
+                android:max="100"
                 app:layout_constraintRight_toRightOf="@+id/right_guidelines"
-                app:layout_constraintTop_toBottomOf="@+id/seekbar_durability"
-                />
-
+                app:layout_constraintTop_toBottomOf="@+id/seekbar_durability" />
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -173,14 +167,13 @@
                 android:id="@+id/seekbar_combat"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:max="100"
-                android:layout_marginTop="10dp"
                 android:layout_margin="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
+                android:max="100"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toRightOf="@+id/right_guidelines"
-                app:layout_constraintTop_toBottomOf="@+id/seekbar_power"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/seekbar_power" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

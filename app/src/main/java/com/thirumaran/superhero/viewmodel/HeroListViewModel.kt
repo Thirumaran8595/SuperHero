@@ -18,8 +18,4 @@ class HeroListViewModel : ViewModel() {
         getHeroAPI(value, herodetail, errorDetail)
     }
 
-
-//    fun detailOnClick(){
-//        println("Final response onclick view model")
-//    }
 }

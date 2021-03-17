@@ -41,6 +41,7 @@
             android:hint="@string/srch_hint"
             android:paddingTop="15dp"
             android:paddingBottom="14dp"
+            android:singleLine="true"
             app:layout_constraintLeft_toLeftOf="@+id/left_guidelines"
             app:layout_constraintRight_toLeftOf="@+id/txt_filter"
             app:layout_constraintTop_toTopOf="parent" />
@@ -68,7 +69,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:src="@drawable/ic_action_close"
+            android:src="@drawable/ic_baseline_close_24"
             app:layout_constraintBottom_toBottomOf="@+id/txt_filter"
             app:layout_constraintRight_toRightOf="@+id/right_guidelines"
             app:layout_constraintTop_toTopOf="@+id/txt_filter" />
@@ -80,7 +81,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:orientation="vertical"
-            android:visibility="visible"
+            android:visibility="gone"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="@+id/left_guidelines"
@@ -92,15 +93,15 @@
             android:id="@+id/txt_error"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/nodata"
+            android:text="@string/srch_hint"
             android:textColor="?attr/txt_color"
             android:textSize="18sp"
-            android:visibility="gone"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="@+id/left_guidelines"
             app:layout_constraintRight_toRightOf="@+id/right_guidelines"
             app:layout_constraintTop_toBottomOf="@+id/edt_srch"
-            tools:text="No Data" />
+            tools:text="@string/srch_hint" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
