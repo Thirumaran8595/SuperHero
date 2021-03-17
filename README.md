@@ -13,11 +13,16 @@
 #Programming Language:<br/>
 Kotlin<br/>
 
+#Library Used<br/>
+Volley<br/>
+Glide<br/>
+
 #Theme:<br/>
 Both Dark and Light Theme.<br/>
 
 #App-Language:<br/>
 English.<br/>
+
 
 
 
