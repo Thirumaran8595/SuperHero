@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="colorFocus" format="color"/>
+    <attr name="colorBg" format="color"/>
+    <attr name="bottom_sheet" format="color"/>
+    <attr name="bottom_sheet_bg" format="color"/>
+    <attr name="txt_color" format="color"/>
+
+</resources>

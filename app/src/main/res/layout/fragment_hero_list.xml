@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.thirumaran.superhero.viewmodel.HeroListViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.ui.fragment.HeroListFragment">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_guidelines"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_guidelines"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_srch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/onfocus_edittext"
+            android:hint="@string/srch_hint"
+            android:paddingTop="15dp"
+            android:paddingBottom="14dp"
+            app:layout_constraintLeft_toLeftOf="@+id/left_guidelines"
+            app:layout_constraintRight_toLeftOf="@+id/txt_filter"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/txt_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/ic_baseline_filter_list_24"
+            app:layout_constraintBottom_toBottomOf="@+id/edt_srch"
+            app:layout_constraintLeft_toRightOf="@+id/edt_srch"
+            app:layout_constraintRight_toLeftOf="@+id/txt_clear"
+            app:layout_constraintTop_toTopOf="@+id/edt_srch" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/txt_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_action_close"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_filter"
+            app:layout_constraintRight_toRightOf="@+id/right_guidelines"
+            app:layout_constraintTop_toTopOf="@+id/txt_filter" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_hero"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/left_guidelines"
+            app:layout_constraintRight_toRightOf="@+id/right_guidelines"
+            app:layout_constraintTop_toBottomOf="@+id/edt_srch"
+            tools:listitem="@layout/hero_list_inflator" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nodata"
+            android:textColor="?attr/txt_color"
+            android:textSize="18sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/left_guidelines"
+            app:layout_constraintRight_toRightOf="@+id/right_guidelines"
+            app:layout_constraintTop_toBottomOf="@+id/edt_srch"
+            tools:text="No Data" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

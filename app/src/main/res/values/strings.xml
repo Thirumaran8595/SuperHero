@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">SuperHero</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="hero_list">Hero List</string>
+    <string name="srch_hint">Search Your Hero or Villian</string>
+
+    <string name="nodata">No Data</string>
+
+    <string name="intelligence">Intelligence</string>
+    <string name="strength">Strength</string>
+    <string name="speed">Speed</string>
+    <string name="durability">Durability</string>
+    <string name="power">Power</string>
+    <string name="combat">Combat</string>
+
+    <string name="all">All</string>
+    <string name="fifty">0 &#8211; 50</string>
+    <string name="hundred">50 &#8211; 100</string>
+
+</resources>

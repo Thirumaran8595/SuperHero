@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.thirumaran.superhero.viewmodel.HeroListViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/bottom_sheet_bg">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bottomsheet_shape"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/left_guidelines"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="16dp"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/right_guidelines"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="16dp"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_intel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/intelligence"
+                android:textColor="?attr/txt_color"
+                app:layout_constraintBottom_toBottomOf="@+id/seekbar_inteli"
+                app:layout_constraintLeft_toLeftOf="@+id/left_guidelines"
+                app:layout_constraintTop_toTopOf="@+id/seekbar_inteli"
+                tools:text="intelligence" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/seekbar_inteli"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:layout_marginTop="10dp"
+                android:layout_margin="20dp"
+                app:layout_constraintRight_toRightOf="@+id/right_guidelines"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_strength"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/strength"
+                android:textColor="?attr/txt_color"
+                app:layout_constraintBottom_toBottomOf="@+id/seekbar_strength"
+                app:layout_constraintLeft_toLeftOf="@+id/left_guidelines"
+                app:layout_constraintTop_toTopOf="@+id/seekbar_strength"
+                tools:text="@string/strength" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/seekbar_strength"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:layout_marginTop="10dp"
+                android:layout_margin="20dp"
+                app:layout_constraintRight_toRightOf="@+id/right_guidelines"
+                app:layout_constraintTop_toBottomOf="@+id/seekbar_inteli"
+                />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/speed"
+                android:textColor="?attr/txt_color"
+                app:layout_constraintBottom_toBottomOf="@+id/seekbar_speed"
+                app:layout_constraintLeft_toLeftOf="@+id/left_guidelines"
+                app:layout_constraintTop_toTopOf="@+id/seekbar_speed"
+                tools:text="@string/speed" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/seekbar_speed"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:layout_marginTop="10dp"
+                android:layout_margin="20dp"
+                app:layout_constraintRight_toRightOf="@+id/right_guidelines"
+                app:layout_constraintTop_toBottomOf="@+id/seekbar_strength"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_durab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/durability"
+                android:textColor="?attr/txt_color"
+                app:layout_constraintBottom_toBottomOf="@+id/seekbar_durability"
+                app:layout_constraintLeft_toLeftOf="@+id/left_guidelines"
+                app:layout_constraintTop_toTopOf="@+id/seekbar_durability"
+                tools:text="@string/durability" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/seekbar_durability"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:layout_marginTop="10dp"
+                android:layout_margin="20dp"
+                app:layout_constraintRight_toRightOf="@+id/right_guidelines"
+                app:layout_constraintTop_toBottomOf="@+id/seekbar_speed"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_power"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/power"
+                android:textColor="?attr/txt_color"
+                app:layout_constraintBottom_toBottomOf="@+id/seekbar_power"
+                app:layout_constraintLeft_toLeftOf="@+id/left_guidelines"
+                app:layout_constraintTop_toTopOf="@+id/seekbar_power"
+                tools:text="@string/power" />
+
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/seekbar_power"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:layout_marginTop="10dp"
+                android:layout_margin="20dp"
+                app:layout_constraintRight_toRightOf="@+id/right_guidelines"
+                app:layout_constraintTop_toBottomOf="@+id/seekbar_durability"
+                />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_combat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/combat"
+                android:textColor="?attr/txt_color"
+                app:layout_constraintBottom_toBottomOf="@+id/seekbar_combat"
+                app:layout_constraintLeft_toLeftOf="@+id/left_guidelines"
+                app:layout_constraintTop_toTopOf="@+id/seekbar_combat"
+                tools:text="@string/combat" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/seekbar_combat"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:layout_marginTop="10dp"
+                android:layout_margin="20dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="@+id/right_guidelines"
+                app:layout_constraintTop_toBottomOf="@+id/seekbar_power"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

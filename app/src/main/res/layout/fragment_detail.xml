@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="hero"
+            type="com.thirumaran.superhero.viewmodel.DetailViewmodel" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/const_hero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:elevation="3dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_hero"
+                    imageLoad="@{hero.detailViewmodel.image.url}"
+                    android:layout_width="150dp"
+                    android:layout_height="200dp"
+                    android:scaleType="fitXY"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_heroName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:text="@{hero.detailViewmodel.name}"
+                    android:textColor="?attr/txt_color"
+                    android:textSize="16sp"
+                    app:layout_constraintLeft_toRightOf="@+id/img_hero"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Character Name" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_intel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/intelligence"
+                    android:textColor="?attr/txt_color"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/int_rating"
+                    app:layout_constraintLeft_toRightOf="@+id/img_hero"
+                    app:layout_constraintTop_toTopOf="@+id/int_rating"
+                    tools:text="@string/intelligence" />
+
+                <androidx.appcompat.widget.AppCompatRatingBar
+                    android:id="@+id/int_rating"
+                    style="?android:attr/ratingBarStyleSmall"
+                    powerRating="@{hero.detailViewmodel.powerstats.intelligence}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:progressTint="@color/yellow"
+                    android:stepSize="0.01"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/strength_rating" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_strength"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/strength"
+                    android:textColor="?attr/txt_color"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/strength_rating"
+                    app:layout_constraintLeft_toRightOf="@+id/img_hero"
+                    app:layout_constraintTop_toTopOf="@+id/strength_rating"
+                    tools:text="@string/strength" />
+
+                <androidx.appcompat.widget.AppCompatRatingBar
+                    android:id="@+id/strength_rating"
+                    style="?android:attr/ratingBarStyleSmall"
+                    powerRating="@{hero.detailViewmodel.powerstats.strength}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:progressTint="@color/yellow"
+                    android:stepSize="0.01"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/speed_rating" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_speed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/speed"
+                    android:textColor="?attr/txt_color"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/speed_rating"
+                    app:layout_constraintLeft_toRightOf="@+id/img_hero"
+                    app:layout_constraintTop_toTopOf="@+id/speed_rating"
+                    tools:text="@string/speed" />
+
+                <androidx.appcompat.widget.AppCompatRatingBar
+                    android:id="@+id/speed_rating"
+                    style="?android:attr/ratingBarStyleSmall"
+                    powerRating="@{hero.detailViewmodel.powerstats.speed}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:progressTint="@color/yellow"
+                    android:stepSize="0.01"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/durab_rating" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_durab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/durability"
+                    android:textColor="?attr/txt_color"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/durab_rating"
+                    app:layout_constraintLeft_toRightOf="@+id/img_hero"
+                    app:layout_constraintTop_toTopOf="@+id/durab_rating"
+                    tools:text="@string/durability" />
+
+                <androidx.appcompat.widget.AppCompatRatingBar
+                    android:id="@+id/durab_rating"
+                    style="?android:attr/ratingBarStyleSmall"
+                    powerRating="@{hero.detailViewmodel.powerstats.durability}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:progressTint="@color/yellow"
+                    android:stepSize="0.01"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/power_rating" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_power"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/power"
+                    android:textColor="?attr/txt_color"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/power_rating"
+                    app:layout_constraintLeft_toRightOf="@+id/img_hero"
+                    app:layout_constraintTop_toTopOf="@+id/power_rating"
+                    tools:text="@string/power" />
+
+                <androidx.appcompat.widget.AppCompatRatingBar
+                    android:id="@+id/power_rating"
+                    style="?android:attr/ratingBarStyleSmall"
+                    powerRating="@{hero.detailViewmodel.powerstats.power}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:progressTint="@color/yellow"
+                    android:stepSize="0.01"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/combat_rating" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_combat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/combat"
+                    android:textColor="?attr/txt_color"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/combat_rating"
+                    app:layout_constraintLeft_toRightOf="@+id/img_hero"
+                    app:layout_constraintTop_toTopOf="@+id/combat_rating"
+                    tools:text="@string/combat" />
+
+                <androidx.appcompat.widget.AppCompatRatingBar
+                    android:id="@+id/combat_rating"
+                    style="?android:attr/ratingBarStyleSmall"
+                    powerRating="@{hero.detailViewmodel.powerstats.combat}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:progressTint="@color/yellow"
+                    android:stepSize="0.01"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</layout>
